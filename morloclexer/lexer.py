@@ -56,6 +56,9 @@ class MorlocLexer(RegexLexer):
             # Double-quoted strings with interpolation
             (r'"', String, 'string'),
 
+            # Pragmas: %inline (dim, like comments)
+            (r'%inline\b', Comment.Preproc),
+
             # Intrinsics: @name
             (r"@[a-z][a-zA-Z0-9_']*", Name.Builtin),
 
